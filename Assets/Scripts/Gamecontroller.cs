@@ -12,6 +12,7 @@ public class Gamecontroller : MonoBehaviour
     public float timePassed;
     public TMP_Text TimeText;
     public TMP_Text Gameover;
+    public bool won;
 
 
 
@@ -32,7 +33,13 @@ public class Gamecontroller : MonoBehaviour
         timePassed += Time.deltaTime;
         TimeText.text = timePassed.ToString();
         PointsText.text = "" + playerpoints.ToString();
-        if(timePassed > 30)
+        if (playerpoints == 10)
+        {
+            GameoverMenucontroller.instance.ShowGamewon();
+            won = true;
+            //Time.timeScale = 0;
+        }
+        if (timePassed > 30 && !won)
         {
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;

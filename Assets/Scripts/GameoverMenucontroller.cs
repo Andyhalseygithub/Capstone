@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameoverMenucontroller : MonoBehaviour
 {
     public static GameoverMenucontroller instance;
-    public GameObject gameover1, gameover2;
+    public GameObject gameover1, gameover2, gamewon;
 
     //methods
     private void Awake()
@@ -25,11 +25,18 @@ public class GameoverMenucontroller : MonoBehaviour
         gameObject.SetActive(true);
         Time.timeScale = 0;
     }
+    public void Gamewon()
+    {
+        ShowGamewon();
+        gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
     public void Hide()
     {
         //gameObject.gameObject.SetActive(false);
         gameover1.SetActive(false);
         gameover2.SetActive(false);
+        gamewon.SetActive(false);
         // start time
         Time.timeScale = 1f;
     }
@@ -42,7 +49,9 @@ public class GameoverMenucontroller : MonoBehaviour
     {
         gameover1.SetActive(false);
         gameover2.SetActive(false);
-        
+        gamewon.SetActive(false);
+
+
         someMenu.SetActive(true);
     }
 
@@ -53,6 +62,10 @@ public class GameoverMenucontroller : MonoBehaviour
     public void ShowGameover2()
     {
         switchMenu(gameover2);
+    }
+    public void ShowGamewon()
+    {
+        switchMenu(gamewon);
     }
 
     public void LoadLevel(string sceneName)
