@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SocialPlatforms;
 
 public class Gamecontroller : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Gamecontroller : MonoBehaviour
     public TMP_Text PointsText;
     public float timePassed;
     public TMP_Text TimeText;
+    public TMP_Text Gameover;
+
 
 
     private void Awake()
@@ -29,6 +32,11 @@ public class Gamecontroller : MonoBehaviour
         timePassed += Time.deltaTime;
         TimeText.text = timePassed.ToString();
         PointsText.text = "" + playerpoints.ToString();
+        if(timePassed > 30)
+        {
+            GameoverMenucontroller.instance.ShowGameover1();
+            //Time.timeScale = 0;
+        }
     }
     public void Addpoints(int pointsAdded)
     {
