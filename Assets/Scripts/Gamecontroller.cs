@@ -39,7 +39,7 @@ public class Gamecontroller : MonoBehaviour
             won = true;
             //Time.timeScale = 0;
         }
-        if (timePassed > 30 && !won)
+        if (timePassed > 60 && !won)
         {
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;

@@ -74,6 +74,10 @@ public class GameoverMenucontroller : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void restart()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 
     public void LoadTitle()
     {

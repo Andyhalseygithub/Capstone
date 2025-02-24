@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     Rigidbody2D _rigidbody2D;
     Transform target;
-    public float speed = 3;
+    public float speed = 2;
     Vector2 moveDirection;
     void Start()
     {
