@@ -7,6 +7,7 @@ public class GameoverMenucontroller : MonoBehaviour
 {
     public static GameoverMenucontroller instance;
     public GameObject gameover1, gameover2, gamewon;
+    public bool check;
 
     //methods
     private void Awake()
@@ -22,6 +23,7 @@ public class GameoverMenucontroller : MonoBehaviour
     public void Gameover2()
     {
         ShowGameover2();
+        check = true;
         gameObject.SetActive(true);
         Time.timeScale = 0;
     }
