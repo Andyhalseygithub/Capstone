@@ -8,6 +8,7 @@ public class GameoverMenucontroller : MonoBehaviour
     public static GameoverMenucontroller instance;
     public GameObject gameover1, gameover2, gamewon;
     public bool check;
+    public float level;
 
     //methods
     private void Awake()
@@ -76,7 +77,21 @@ public class GameoverMenucontroller : MonoBehaviour
     }
     public void restart()
     {
-        SceneManager.LoadScene("SampleScene");
+        if (level == 1)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        if (level == 2)
+        {
+            SceneManager.LoadScene("Level 2");
+        }
+    }
+
+    public void next2()
+    {
+        {
+            SceneManager.LoadScene("Level 2");
+        }
     }
 
     public void LoadTitle()
