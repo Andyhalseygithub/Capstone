@@ -6,23 +6,17 @@ using UnityEngine.UI;
 public class Mainmenu : MonoBehaviour
 {
     public static Mainmenu instance;
-    public GameObject quickplay;//, levelselect;
+    public GameObject main_menu, level_select;
     private void Awake()
     {
         instance = this;
-    }
-    /*public void swapmenu()
-    {
-        ShowGameover1();
-        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
         //gameObject.gameObject.SetActive(false);
-        gameover1.SetActive(false);
-        gameover2.SetActive(false);
-        gamewon.SetActive(false);
+        main_menu.SetActive(false);
+        level_select.SetActive(false);
         // start time
         Time.timeScale = 1f;
     }
@@ -30,62 +24,44 @@ public class Mainmenu : MonoBehaviour
     void Start()
     {
         Hide();
+        ShowMain();
     }
 
     void switchMenu(GameObject someMenu)
     {
-        gameover1.SetActive(false);
-        gameover2.SetActive(false);
-        gamewon.SetActive(false);
-
+        main_menu.SetActive(false);
+        level_select.SetActive(false);
 
         someMenu.SetActive(true);
     }
     
-    public void ShowGameover1()
+    public void ShowMain()
     {
-        switchMenu(gameover1);
+        switchMenu(main_menu);
     }
-    public void ShowGameover2()
+    public void ShowLevels()
     {
-        switchMenu(gameover2);
+        switchMenu(level_select);
     }
-    public void ShowGamewon()
-    {
-        switchMenu(gamewon);
-    }
-    */
     public void Quickplay()
     {
         SceneManager.LoadScene("SampleScene");
     }
-    /*
-    public void LoadLevel(string sceneName)
+    
+    public void LoadLevel1()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("SampleScene");
     }
-    public void restart()
+    public void LoadLevel2()
     {
-        if (level == 1)
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
-        if (level == 2)
-        {
-            SceneManager.LoadScene("Level 2");
-        }
+        SceneManager.LoadScene("Level 2");
     }
-
-    public void next2()
+    public void LoadLevel3()
     {
-        {
-            SceneManager.LoadScene("Level 2");
-        }
+        SceneManager.LoadScene("Level 3");
     }
-
-    public void LoadTitle()
+    public void LoadLevel4()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Level 4");
     }
-    */
 }

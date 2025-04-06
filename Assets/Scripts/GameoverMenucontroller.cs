@@ -85,12 +85,32 @@ public class GameoverMenucontroller : MonoBehaviour
         {
             SceneManager.LoadScene("Level 2");
         }
+        if (level == 3)
+        {
+            SceneManager.LoadScene("Level 3");
+        }
+        if (level == 4)
+        {
+            SceneManager.LoadScene("Level 4");
+        }
     }
 
     public void next2()
     {
         {
             SceneManager.LoadScene("Level 2");
+        }
+    }
+    public void next3()
+    {
+        {
+            SceneManager.LoadScene("Level 3");
+        }
+    }
+    public void next4()
+    {
+        {
+            SceneManager.LoadScene("Level 4");
         }
     }
 
