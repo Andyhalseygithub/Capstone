@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     }
     
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {

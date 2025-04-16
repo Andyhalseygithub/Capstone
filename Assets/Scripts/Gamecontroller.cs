@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms;
 public class Gamecontroller : MonoBehaviour
 {
     public static Gamecontroller instance;
-    public static int playerpoints;
+    public int playerpoints;
     public TMP_Text PointsText;
     public float timePassed;
     public TMP_Text TimeText;
@@ -46,12 +46,34 @@ public class Gamecontroller : MonoBehaviour
             won = true;
             //Time.timeScale = 0;
         }
+        if (level == 3 && playerpoints == 15)
+        {
+            GameoverMenucontroller.instance.ShowGamewon();
+            won = true;
+            //Time.timeScale = 0;
+        }
+        if (level == 4 && playerpoints == 15)
+        {
+            GameoverMenucontroller.instance.ShowGamewon();
+            won = true;
+            //Time.timeScale = 0;
+        }
         if (level == 1 && timePassed > 60 && !won)
         {
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;
         }
         if (level == 2 && timePassed > 90 && !won)
+        {
+            GameoverMenucontroller.instance.ShowGameover1();
+            //Time.timeScale = 0;
+        }
+        if (level == 3 && timePassed > 120 && !won)
+        {
+            GameoverMenucontroller.instance.ShowGameover1();
+            //Time.timeScale = 0;
+        }
+        if (level == 4 && timePassed > 150 && !won)
         {
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;
