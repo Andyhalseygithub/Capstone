@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms;
+using Unity.Services.Leaderboards;
+using Unity.Services.Authentication;
+using Unity.Services.Core;
 
 public class Gamecontroller : MonoBehaviour
 {
@@ -38,25 +41,25 @@ public class Gamecontroller : MonoBehaviour
         {
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }
         if (level == 2 && playerpoints == 15)
         {
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }
         if (level == 3 && playerpoints == 15)
         {
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }
         if (level == 4 && playerpoints == 15)
         {
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
         }
         if (level == 1 && timePassed > 60 && !won)
         {

@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
         {
             _rb.rotation -= 2.0f;
         }
+
+        if (GameoverMenucontroller.instance.gameoverhappened == true)
+        {
+            Time.timeScale = 0;
+            return;
+        }
         /*
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {

@@ -28,6 +28,11 @@ public class Enemy : MonoBehaviour
 
             _rigidbody2D.velocity = new Vector2(moveDirection.x, moveDirection.y) * speed;
 
+            if (GameoverMenucontroller.instance.gameoverhappened == true)
+            {
+                Time.timeScale = 0;
+                return;
+            }
         }
     }
     

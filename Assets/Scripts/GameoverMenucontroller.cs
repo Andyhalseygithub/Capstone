@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameoverMenucontroller : MonoBehaviour
 {
     public static GameoverMenucontroller instance;
+    public bool gameoverhappened;
     public GameObject gameover1, gameover2, gamewon;
     public bool check;
     public float level;
@@ -20,6 +21,7 @@ public class GameoverMenucontroller : MonoBehaviour
         ShowGameover1();
         gameObject.SetActive(true);
         Time.timeScale = 0;
+        gameoverhappened = true;
     }
     public void Gameover2()
     {
@@ -27,12 +29,14 @@ public class GameoverMenucontroller : MonoBehaviour
         check = true;
         gameObject.SetActive(true);
         Time.timeScale = 0;
+        gameoverhappened = true;
     }
     public void Gamewon()
     {
         ShowGamewon();
         gameObject.SetActive(true);
         Time.timeScale = 0;
+        gameoverhappened = true;
     }
     public void Hide()
     {

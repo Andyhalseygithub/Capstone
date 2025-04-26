@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Mainmenu : MonoBehaviour
 {
     public static Mainmenu instance;
-    public GameObject main_menu, level_select;
+    public GameObject main_menu, level_select, leaderboard, skin_select;
     private void Awake()
     {
         instance = this;
@@ -17,6 +17,8 @@ public class Mainmenu : MonoBehaviour
         //gameObject.gameObject.SetActive(false);
         main_menu.SetActive(false);
         level_select.SetActive(false);
+        skin_select.SetActive(false);
+        leaderboard.SetActive(false);
         // start time
         Time.timeScale = 1f;
     }
@@ -31,6 +33,8 @@ public class Mainmenu : MonoBehaviour
     {
         main_menu.SetActive(false);
         level_select.SetActive(false);
+        skin_select.SetActive(false);
+        leaderboard.SetActive(false);
 
         someMenu.SetActive(true);
     }
@@ -42,6 +46,14 @@ public class Mainmenu : MonoBehaviour
     public void ShowLevels()
     {
         switchMenu(level_select);
+    }
+    public void ShowSkins()
+    {
+        switchMenu(skin_select);
+    }
+    public void ShowLeaderboard()
+    {
+        switchMenu(leaderboard);
     }
     public void Quickplay()
     {
