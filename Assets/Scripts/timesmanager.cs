@@ -9,17 +9,17 @@ public class timesmanager : MonoBehaviour
     private TextMeshProUGUI inputScore;
     [SerializeField]
     private TextMeshProUGUI inputName;
-    [SerializeField]
-    private TextMeshProUGUI level;
+    
 
     public UnityEvent<string, int> submitTimeEvent;
 
     public void Update()
     {
-        inputScore.text = Gamecontroller.CombinedScore.ToString();
+        //inputScore.text = Gamecontroller.CombinedScore.ToString();
+        inputScore.text = Gamecontroller.timepassedInt.ToString();
     }
     public void SubmitScore()
     {
-        submitTimeEvent.Invoke(inputName.text, int.Parse(inputScore.text));
+        submitTimeEvent.Invoke("Level " + Gamecontroller.uploadlevel.ToString() + ": " + inputName.text, int.Parse(inputScore.text));
     }
 }

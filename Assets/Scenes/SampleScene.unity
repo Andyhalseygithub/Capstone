@@ -1521,7 +1521,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2062065449}
         m_TargetAssemblyTypeName: GameoverMenucontroller, Assembly-CSharp
         m_MethodName: LoadTitle
         m_Mode: 1
@@ -2333,6 +2333,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3606309191740664943, guid: c339633894c4d3740bf1a41a4c3765f0, type: 3}
   m_PrefabInstance: {fileID: 2062065447}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2062065449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7597662512563197189, guid: c339633894c4d3740bf1a41a4c3765f0, type: 3}
+  m_PrefabInstance: {fileID: 2062065447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a464342fb9cfe54580c90115c16ec20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2064794866
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -120,6 +120,6 @@ public class GameoverMenucontroller : MonoBehaviour
 
     public void LoadTitle()
     {
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Mainmenu");
     }
 }

@@ -17,7 +17,9 @@ public class Gamecontroller : MonoBehaviour
     public TMP_Text TimeText;
     public TMP_Text Gameover;
     public bool won;
-    public static int level;
+    public int level;
+    public static int uploadlevel;
+    public static int timepassedInt;
     public static int CombinedScore;
     public int CombinedScore1;
     public int CombinedScore2;
@@ -41,13 +43,17 @@ public class Gamecontroller : MonoBehaviour
     void Update()
     {
         int playerpointsInt = Int32.Parse(PointsText.text);
-        int timepassedInt = Int32.Parse(TimeText.text);
+        print(playerpoints);
+        timepassedInt = Mathf.RoundToInt(float.Parse(TimeText.text));
+
         CombinedScore = CombinedScore1 + CombinedScore2 + CombinedScore3 + CombinedScore4;
         timePassed += Time.deltaTime;
         TimeText.text = timePassed.ToString();
         PointsText.text = "" + playerpoints.ToString();
         if (level == 1 && playerpoints == 10)
         {
+            print("test" + playerpoints);
+            uploadlevel = level;
             CombinedScore1 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
@@ -55,6 +61,7 @@ public class Gamecontroller : MonoBehaviour
         }
         if (level == 2 && playerpoints == 15)
         {
+            uploadlevel = level;
             CombinedScore2 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
@@ -62,6 +69,7 @@ public class Gamecontroller : MonoBehaviour
         }
         if (level == 3 && playerpoints == 15)
         {
+            uploadlevel = level;
             CombinedScore3 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
@@ -69,6 +77,7 @@ public class Gamecontroller : MonoBehaviour
         }
         if (level == 4 && playerpoints == 15)
         {
+            uploadlevel = level;
             CombinedScore4 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;

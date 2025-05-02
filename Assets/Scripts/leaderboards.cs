@@ -9,8 +9,6 @@ public class leaderboards : MonoBehaviour
     private List<TextMeshProUGUI> names;
     [SerializeField]
     private List<TextMeshProUGUI> scores;
-    [SerializeField]
-    private List<TextMeshProUGUI> level;
 
     private string publicLeaderboardKey = "00ee3cba403204b56df481fd2d978f47b9193182a65c9140b94de4aeabfaf7fa";
 
@@ -26,15 +24,14 @@ public class leaderboards : MonoBehaviour
         for (int i = 0; i < looplength; i++) {
                 names[i].text = msg[i].Username;
                 scores[i].text = msg[i].Score.ToString();
-                level[i].text = msg[i].Score.ToString();
-
             }
         }));
     }
 
-    public void SetLeaderboardEntry(string username, int time, int level)
+    public void SetLeaderboardEntry(string username, int time)
     {
-        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, time, level, ((msg) =>
+        print(username + " " + time);
+        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, time, ((msg) =>
         {
             GetLeaderboard();
         }));
