@@ -20,8 +20,9 @@ public class leaderboards : MonoBehaviour
     {
         LeaderboardCreator.GetLeaderboard(publicLeaderboardKey, ((msg) =>
         {
-        int looplength = (msg.Length < names.Count) ? msg.Length : names.Count;
-        for (int i = 0; i < looplength; i++) {
+            int looplength = (msg.Length < names.Count) ? msg.Length : names.Count;
+            for (int i = 0; i < looplength; i++)
+            {
                 names[i].text = msg[i].Username;
                 scores[i].text = msg[i].Score.ToString();
             }
@@ -31,9 +32,12 @@ public class leaderboards : MonoBehaviour
     public void SetLeaderboardEntry(string username, int time)
     {
         print(username + " " + time);
-        LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, time, ((msg) =>
+        if (time != 0)
         {
-            GetLeaderboard();
-        }));
+            LeaderboardCreator.UploadNewEntry(publicLeaderboardKey, username, time, ((msg) =>
+            {
+                GetLeaderboard();
+            }));
+        }
     }
 }

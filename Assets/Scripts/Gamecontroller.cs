@@ -26,6 +26,8 @@ public class Gamecontroller : MonoBehaviour
     public int CombinedScore3;
     public int CombinedScore4;
 
+    public static int Timescore; 
+
 
 
     private void Awake()
@@ -43,18 +45,18 @@ public class Gamecontroller : MonoBehaviour
     void Update()
     {
         int playerpointsInt = Int32.Parse(PointsText.text);
-        print(playerpoints);
+        //print(playerpoints);
         timepassedInt = Mathf.RoundToInt(float.Parse(TimeText.text));
 
-        CombinedScore = CombinedScore1 + CombinedScore2 + CombinedScore3 + CombinedScore4;
         timePassed += Time.deltaTime;
         TimeText.text = timePassed.ToString();
         PointsText.text = "" + playerpoints.ToString();
         if (level == 1 && playerpoints == 10)
         {
-            print("test" + playerpoints);
+            //print("test" + playerpoints);
             uploadlevel = level;
-            CombinedScore1 = ((playerpointsInt / timepassedInt) * 10);
+            Timescore = ((playerpointsInt / timepassedInt) * 100);
+            //CombinedScore1 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
             Time.timeScale = 0;
@@ -62,7 +64,8 @@ public class Gamecontroller : MonoBehaviour
         if (level == 2 && playerpoints == 15)
         {
             uploadlevel = level;
-            CombinedScore2 = ((playerpointsInt / timepassedInt) * 10);
+            Timescore = ((playerpointsInt / timepassedInt) * 100);
+            //CombinedScore2 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
             Time.timeScale = 0;
@@ -70,7 +73,8 @@ public class Gamecontroller : MonoBehaviour
         if (level == 3 && playerpoints == 15)
         {
             uploadlevel = level;
-            CombinedScore3 = ((playerpointsInt / timepassedInt) * 10);
+            Timescore = ((playerpointsInt / timepassedInt) * 100);
+            //CombinedScore3 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
             Time.timeScale = 0;
@@ -78,32 +82,37 @@ public class Gamecontroller : MonoBehaviour
         if (level == 4 && playerpoints == 15)
         {
             uploadlevel = level;
-            CombinedScore4 = ((playerpointsInt / timepassedInt) * 10);
+            Timescore = ((playerpointsInt / timepassedInt) * 100);
+            //CombinedScore4 = ((playerpointsInt / timepassedInt) * 10);
             GameoverMenucontroller.instance.ShowGamewon();
             won = true;
             Time.timeScale = 0;
         }
         if (level == 1 && timePassed > 60 && !won)
         {
-            CombinedScore1 = 0;
+            //CombinedScore1 = 0;
+            Timescore = 0;
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;
         }
         if (level == 2 && timePassed > 90 && !won)
         {
-            CombinedScore2 = 0;
+            //CombinedScore2 = 0;
+            Timescore = 0;
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;
         }
         if (level == 3 && timePassed > 120 && !won)
         {
-            CombinedScore3 = 0;
+            Timescore = 0;
+            //CombinedScore3 = 0;
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;
         }
         if (level == 4 && timePassed > 150 && !won)
         {
-            CombinedScore4 = 0;
+            Timescore = 0;
+            //CombinedScore4 = 0;
             GameoverMenucontroller.instance.ShowGameover1();
             //Time.timeScale = 0;
         }

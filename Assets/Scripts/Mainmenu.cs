@@ -76,4 +76,9 @@ public class Mainmenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level 4");
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
